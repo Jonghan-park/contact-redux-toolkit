@@ -22,10 +22,12 @@ nav{
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 5px solid black;
 }
 .nav_container h1{
   font-size: 40px;
-}
+  text-shadow: 3px 3px gray;
+} 
 .main_container{
   display: flex;
   padding: 3rem;
@@ -39,16 +41,18 @@ nav{
   align-items: center;
   padding: 1rem;
   border: 1px solid black;
+  box-shadow: 5px 5px gray;
   border-radius: 20px;
 }
 .contact_item:hover{
-  box-shadow: 2px 2px black;
+  box-shadow: 3px 3px black;
   transition: ease-in;
 }
 .contact_image{
   width: 100px;
   height: 130px;
   border-radius: 50%;
+  
 }
 .total_contact{
   margin-right: 2rem;
@@ -81,4 +85,14 @@ button:hover{
 .remove_contact:hover{
   background-color: black;
   color: rgb(241, 79, 79);
+}
+.add_button{
+
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 3rem;
+  margin-top: 3rem;
+}
+.add_button button{
+  background-color: azure;
 }

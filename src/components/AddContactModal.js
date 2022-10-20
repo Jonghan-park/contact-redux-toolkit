@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { closeModal } from "../features/modal/modalSlice";
+import { addContact } from "../features/contact/contactSlice";
 
 const AddContactModal = () => {
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [image, setImage] = useState("");
+  const dispatch = useDispatch();
   return (
     <div className="modal_container">
       <div className="modal">
@@ -15,8 +22,8 @@ const AddContactModal = () => {
               required
               id="name"
               placeholder="Enter a name"
-              // value={name}
-              // onChange={e => setName(e.target.value)}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="modal_phone">
@@ -26,8 +33,8 @@ const AddContactModal = () => {
               required
               id="phone"
               placeholder="Enter a phone number"
-              // value={phone}
-              // onChange={e => setPhone(e.target.value)}
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="modal_image">
@@ -37,13 +44,23 @@ const AddContactModal = () => {
               required
               id="image"
               placeholder="Enter a image url"
-              // value={image}
-              // onChange={e => setImage(e.target.value)}
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
             />
           </div>
           <div className="modal_button_container">
-            <button className="modal_add_button">Add</button>
-            <button className="modal_cancel_button">Cancel</button>
+            <button
+              className="modal_add_button"
+              onClick={() => dispatch(addContact({ name, phone, image }))}
+            >
+              Add
+            </button>
+            <button
+              className="modal_cancel_button"
+              onClick={() => dispatch(closeModal())}
+            >
+              Cancel
+            </button>
           </div>
         </form>
       </div>

@@ -4,6 +4,9 @@ import contactData from "../../contactData";
 const initialState = {
   contacts: contactData,
   total: contactData.length,
+  name: "",
+  phone: "",
+  image: "",
 };
 
 const contactSlice = createSlice({
@@ -24,10 +27,21 @@ const contactSlice = createSlice({
       );
       state.total = state.contacts.length;
     },
+    addContact: (state, action) => {
+      state.name = action.payload.name;
+      state.phone = action.payload.phone;
+      state.image = action.payload.image;
+      state.contacts.push({
+        id: state.contacts.length + 1,
+        name: state.name,
+        phone: state.phone,
+        image: state.image,
+      });
+    },
   },
 });
 
-export const { clearContact, recoverContact, removeContact } =
+export const { clearContact, recoverContact, removeContact, addContact } =
   contactSlice.actions;
 
 export default contactSlice.reducer;

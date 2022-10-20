@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { clearContact } from "../features/contact/contactSlice";
+import { removeContact } from "../features/contact/contactSlice";
 
 const Contact = ({ contacts }) => {
   const dispatch = useDispatch();
@@ -16,10 +16,15 @@ const Contact = ({ contacts }) => {
             />
             <h1 className="contact_name">Name: {contact.name}</h1>
             <h3 className="contact_phone">Phone: {contact.phone}</h3>
+            <p
+              className="remove_contact"
+              onClick={() => dispatch(removeContact(contact.id))}
+            >
+              Remove contact
+            </p>
           </div>
         );
       })}
-      <button onClick={() => dispatch(clearContact())}>Clear Contact</button>
     </>
   );
 };

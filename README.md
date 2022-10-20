@@ -14,3 +14,4 @@ Used: React, Redux toolkit, HTML, CSS
 IDE: Visual Studio Code
 
 ## Screen shots
+![Screen Shot 2022-10-20 at 4 55 59 PM](https://user-images.githubusercontent.com/90344204/197074342-40856aad-a241-4ba0-876c-241bdbd16ec7.png)

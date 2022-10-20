@@ -26,3 +26,16 @@ nav{
 .nav_container h1{
   font-size: 40px;
 }
+.main_container{
+  display: flex;
+}
+.contact_item{
+  display: flex;
+  flex-direction: column;
+}
+.contact_image{
+  width: 100px;
+  height: 130px;
+  border-radius: 50%;
+  
+}
